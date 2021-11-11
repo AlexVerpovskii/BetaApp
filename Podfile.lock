@@ -1,0 +1,26 @@
+PODS:
+  - Alamofire (5.4.4)
+  - SDWebImage (5.11.1):
+    - SDWebImage/Core (= 5.11.1)
+  - SDWebImage/Core (5.11.1)
+  - TableKit (2.11.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - SDWebImage
+  - TableKit
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - SDWebImage
+    - TableKit
+
+SPEC CHECKSUMS:
+  Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
+  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
+  TableKit: 8a1a267d841a2da638ea09bdb0db33aedb459fa8
+
+PODFILE CHECKSUM: 7a770daa5cbe17f3e6f9b30b89f8db021838a694
+
+COCOAPODS: 1.11.2
