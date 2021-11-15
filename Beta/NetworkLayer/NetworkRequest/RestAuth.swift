@@ -29,5 +29,6 @@ final class RestAuth: BaseRequest {
     
     init(login: AuthModel) {
         self.body = login
+        super.init()
     }
 }
