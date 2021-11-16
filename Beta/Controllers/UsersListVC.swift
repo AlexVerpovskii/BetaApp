@@ -13,7 +13,6 @@ final class UsersListVC: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     
     private var tableDirector: TableDirector?
-    private var userList: [User]?
     private let networkApi = NetworkApi.shared
     private var users: DataModel!
     
@@ -22,19 +21,17 @@ final class UsersListVC: UIViewController {
 
         networkApi.sendRequest(request: RestUserList(), model: users) { response in
             if response?.data != nil {
-                self.userList = response?.data
                 DispatchQueue.main.async {
-                    self.prepareTable()
+                    self.prepareTable(with: response?.data ?? [])
                 }
             }
         }
         tableDirector = TableDirector(tableView: tableView)
-        prepareTable()
     }
     
-    private func prepareTable() {
+    private func prepareTable(with users: [User]) {
         
-        userList?.forEach({ user in
+        users.forEach({ user in
             tableDirector?.append(rows: [TableRow<UserCell>(item: UserCellModel(firstName: user.first_name, lastName: user.last_name, email: user.email, avatar: user.avatar), actions: [routing(user.email)])])
         })
         tableDirector?.tableView?.separatorStyle = .none
